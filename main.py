@@ -48,13 +48,7 @@ def Search():
 
     for s in states.states:
 
-        a = "SVF"
-        b = "SWRD"
-        c = "SAS"
-
-
-        if a and b in s.callsign[0:5]:
-
+        if "SVF" in s.callsign[0:5] and s.origin_country == "Sweden":
 
             callsign  = s.callsign
             icao24 = s.icao24
@@ -70,6 +64,7 @@ def Search():
             var5 = "Country: " + origin_country
 
             list = (latitude, longitude)
+
             location = geolocator.reverse(list)
 
             # converting to string
